@@ -1,0 +1,364 @@
+/* Mengatur font dasar untuk seluruh halaman */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f4f7f6; /* Warna latar belakang yang lembut */
+  line-height: 1.5; /* Tinggi baris default untuk keterbacaan */
+  color: #333; /* Warna teks default untuk body di light mode */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transisi untuk dark mode */
+}
+
+/* Gaya untuk Dark Mode */
+body.dark-mode {
+  background-color: #1a202c; /* Latar belakang gelap */
+  color: #cbd5e0; /* Teks terang untuk body di dark mode */
+}
+
+/* Perbaikan untuk Judul Web (h1) */
+/* Menggunakan !important untuk memastikan override. */
+h1 {
+  color: #1a202c !important; /* Warna teks gelap untuk h1 di light mode (mendekati hitam) */
+}
+body.dark-mode h1 {
+  color: #ffffff !important; /* Warna teks putih untuk h1 di dark mode */
+}
+
+/* Memastikan latar belakang navbar berubah sesuai mode dengan !important */
+nav {
+  background-color: #f4f7f6 !important; /* Light mode */
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode nav {
+  background-color: #1a202c !important; /* Dark mode */
+}
+
+/* --- Gaya untuk desktopFilterSection (Kontainer Fixed Utama) --- */
+/* Ini hanya sebagai kontainer fixed. Styling visual dilakukan di desktopFilterCollapse */
+#desktopFilterSection {
+  padding: 0; /* Pastikan padding di sini nol */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* --- Gaya untuk desktopFilterCollapse (Konten Filter yang Dapat di-toggle di Desktop) --- */
+#desktopFilterCollapse {
+  background-color: #f4f7f6; /* Light mode default */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0; /* Light gray border */
+  border-radius: 0.5rem; /* Rounded corners */
+  padding: 0.5rem 0; /* Padding vertikal 0.5rem, horizontal 0 (padding horizontal dari px-4 sm:px-8 di HTML) */
+  margin-bottom: 1rem; /* Margin bawah untuk memisahkan dari konten */
+}
+
+body.dark-mode #desktopFilterCollapse {
+  background-color: #1a202c; /* Dark mode */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  border-color: #2d3748; /* Darker border */
+}
+
+/* --- Gaya untuk navbar-search (collapsible mobile filters) --- */
+#navbar-search {
+  background-color: #f4f7f6; /* Light mode default */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0; /* Light gray border */
+  border-radius: 0.5rem; /* Rounded corners */
+  padding: 0.5rem 0; /* Padding vertikal 0.5rem, horizontal 0 (padding horizontal dari px-4 sm:px-8 di HTML) */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+body.dark-mode #navbar-search {
+  background-color: #1a202c; /* Dark mode */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  border-color: #2d3748; /* Darker border */
+}
+
+/* --- Penyesuaian Dark Mode untuk Tombol Toggle & Search Input di Navbar --- */
+/* Tombol Dark Mode Toggle */
+#darkModeToggle {
+  background-color: #e2e8f0; /* Light mode default */
+  color: #4a5568; /* Light mode text color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode #darkModeToggle {
+  background-color: #4a5568 !important; /* Dark mode */
+  color: #cbd5e0 !important; /* Dark mode text color */
+}
+
+/* Search Input Desktop */
+#searchInputDesktop {
+  background-color: #f9fafb; /* Light mode default */
+  color: #1f2937; /* Dark text for light mode */
+  border-color: #d1d5db; /* Light border */
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+body.dark-mode #searchInputDesktop {
+  background-color: #374151 !important; /* Dark mode background */
+  color: #f9fafb !important; /* Light text for dark mode */
+  border-color: #4b5563 !important; /* Darker border */
+}
+
+body.dark-mode #searchInputDesktop::placeholder {
+  color: #9ca3af !important; /* Dark mode placeholder */
+}
+
+/* Search Input Mobile */
+#searchInputMobile {
+  background-color: #f9fafb; /* Light mode default */
+  color: #1f2937; /* Dark text for light mode */
+  border-color: #d1d5db; /* Light border */
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+body.dark-mode #searchInputMobile {
+  background-color: #374151 !important; /* Dark mode background */
+  color: #f9fafb !important; /* Light text for dark mode */
+  border-color: #4b5563 !important; /* Darker border */
+}
+
+body.dark-mode #searchInputMobile::placeholder {
+  color: #9ca3af !important; /* Dark mode placeholder */
+}
+
+/* Penyesuaian untuk gambar produk */
+.product-image {
+  width: 100%;
+  height: 180px; /* Tinggi gambar tetap agar konsisten */
+  object-fit: contain; /* Memastikan seluruh gambar terlihat, tidak terpotong */
+  border-radius: 0.5rem 0.5rem 0 0; /* Sudut membulat hanya di bagian atas */
+  background-color: #ffffff; /* Latar belakang putih untuk area kosong di sekitar gambar */
+}
+
+/* Gaya untuk loading spinner */
+.loader {
+  border: 4px solid #f3f3f3; /* Abu-abu terang */
+  border-top: 4px solid #3498db; /* Biru */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+  display: none; /* Sembunyikan secara default */
+}
+
+/* Animasi putar untuk loading spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Gaya dasar untuk kartu produk */
+.product-card {
+  position: relative; /* Diperlukan untuk posisi absolut label status, brand, dan HET */
+  background-color: #ffffff;
+  border-radius: 0.5rem; /* Sudut membulat */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Bayangan lembut */
+  overflow: hidden; /* Memastikan konten di dalam tetap pada batas kartu */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease,
+    box-shadow 0.3s ease; /* Transisi untuk dark mode */
+}
+
+/* Gaya kartu produk di Dark Mode */
+body.dark-mode .product-card {
+  background-color: #2d3748; /* Latar belakang kartu gelap */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Perbaikan untuk teks info produk (SKU/Nama Produk/Isi/Satuan) */
+/* Di light mode, warna akan menjadi #4a5568 (dark gray). */
+/* Di dark mode, akan menjadi #cbd5e0 (light gray). */
+.product-card p {
+  color: #4a5568 !important; /* Warna abu-abu gelap untuk info produk di light mode */
+}
+body.dark-mode .product-card p {
+  color: #cbd5e0 !important; /* Warna teks terang untuk info produk di dark mode */
+}
+
+/* Perbaikan untuk teks harga (Karton, Pack, Pcs) */
+/* Di light mode, warna akan menjadi #1a202c (dark gray, hampir hitam). */
+/* Di dark mode, akan menjadi putih. */
+.product-card .font-semibold {
+  /* Menargetkan span harga */
+  color: #1a202c !important; /* Warna teks sangat gelap (mendekati hitam) untuk harga di light mode */
+}
+body.dark-mode .product-card .font-semibold {
+  color: #ffffff !important; /* Warna teks putih untuk harga di dark mode */
+}
+
+/* Efek saat kartu produk di-hover */
+.product-card:hover {
+  transform: scale(1.03); /* Sedikit membesar saat di-hover */
+}
+
+/* Gaya untuk label status (NEW, Best Seller, Promo) di kiri atas */
+.product-status-label {
+  position: absolute;
+  top: 0.5rem; /* Jarak dari atas */
+  left: 0.5rem; /* Jarak dari kiri */
+  padding: 0.25rem 0.5rem; /* Padding internal */
+  border-radius: 0.25rem; /* Sudut membulat */
+  font-size: 0.75rem; /* Ukuran font lebih kecil */
+  font-weight: bold;
+  color: #ffffff; /* Warna teks putih */
+  z-index: 10; /* Memastikan label berada di atas gambar */
+  /* Warna latar belakang akan diatur secara dinamis oleh JavaScript */
+}
+
+/* Kontainer untuk label Brand di kanan atas */
+.product-top-right-labels {
+  position: absolute;
+  top: 0.5rem; /* Jarak dari atas */
+  right: 0.5rem; /* Jarak dari kanan */
+  z-index: 10; /* Memastikan label berada di atas gambar */
+}
+
+/* Gaya untuk label brand di kanan atas */
+.product-brand-label {
+  padding: 0.25rem 0.5rem; /* Padding internal */
+  border-radius: 0.25rem; /* Sudut membulat */
+  font-size: 0.75rem; /* Ukuran font lebih kecil */
+  font-weight: bold;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Latar belakang semi-transparan hitam */
+  color: #ffffff; /* Warna teks putih */
+  display: inline-block; /* Agar bisa diatur padding dan border-radius */
+}
+
+/* Gaya untuk label HET di sisi kanan gambar (terpusat vertikal) */
+.product-het-label-on-image {
+  /* Nama kelas untuk HET di gambar */
+  position: absolute;
+  right: 0.5rem; /* Jarak dari kanan */
+  top: 50%; /* Posisikan ke tengah vertikal */
+  transform: translateY(-50%); /* Sesuaikan posisi agar benar-benar di tengah */
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  background-color: rgba(
+    255,
+    0,
+    0,
+    0.7
+  ); /* Latar belakang merah semi-transparan */
+  color: #ffffff;
+  z-index: 10;
+}
+
+/* Gaya untuk tombol filter */
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem; /* Sudut membulat */
+  background-color: #e2e8f0; /* Warna abu-abu terang default */
+  color: #4a5568; /* Warna teks abu-abu gelap */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent; /* Border default */
+  white-space: nowrap; /* Mencegah teks tombol pecah baris */
+}
+
+.filter-btn:hover {
+  background-color: #cbd5e0; /* Warna lebih gelap saat di-hover */
+}
+
+.filter-btn.active {
+  background-color: #4c51bf; /* Warna indigo untuk tombol aktif */
+  color: #ffffff; /* Teks putih untuk tombol aktif */
+  border-color: #4338ca; /* Border lebih gelap untuk tombol aktif */
+}
+
+/* Gaya tombol filter di Dark Mode */
+body.dark-mode .filter-btn {
+  background-color: #4a5568; /* Abu-abu gelap */
+  color: #cbd5e0; /* Teks terang */
+  border-color: #2d3748;
+}
+
+body.dark-mode .filter-btn:hover {
+  background-color: #616e7f;
+}
+
+body.dark-mode .filter-btn.active {
+  background-color: #667eea; /* Indigo yang lebih terang untuk dark mode */
+  color: #ffffff;
+  border-color: #5a67d8;
+}
+
+/* Media Query untuk Ukuran Layar Kecil (misalnya, mobile) */
+@media (max-width: 1200px) {
+  /* Tailwind's 'sm' breakpoint */
+  h1 {
+    font-size: 1rem !important; /* Mengurangi ukuran font H1 di layar kecil */
+  }
+  .filter-btn {
+    font-size: 0.5rem; /* Mengurangi ukuran font tombol filter */
+    padding: 0.3rem 0.6rem; /* Padding sedikit lebih kecil */
+  }
+  /* Mengatur flex-direction menjadi column pada navbar yang di-collapse */
+  #navbar-search {
+    flex-direction: column;
+    align-items: flex-start; /* Sejajarkan item ke kiri */
+  }
+  /* Menghapus padding-x dari div di dalam navbar-search agar filter sejajar */
+  #navbar-search > div {
+    /* Untuk container filter di dalam navbar */
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%; /* Pastikan mengisi lebar penuh */
+    justify-content: flex-start; /* Sejajarkan tombol filter ke kiri */
+  }
+}
+
+/* Gaya untuk Tombol Back to Top */
+.back-to-top-btn {
+  position: fixed; /* Posisi tetap di layar */
+  bottom: 2rem; /* Jarak dari bawah */
+  right: 2rem; /* Jarak dari kanan */
+  background-color: #4c51bf; /* Warna latar belakang biru/indigo */
+  color: white; /* Warna teks putih */
+  padding: 1rem; /* Padding di sekitar ikon */
+  border-radius: 9999px; /* Membuat lingkaran penuh */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Bayangan */
+  cursor: pointer; /* Mengubah kursor menjadi pointer saat dihover */
+  border: none; /* Menghapus border default */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transisi untuk muncul/hilang */
+  z-index: 100; /* Pastikan di atas elemen lain */
+}
+
+/* Gaya untuk tombol Back to Top di Dark Mode */
+body.dark-mode .back-to-top-btn {
+  background-color: #667eea; /* Indigo yang lebih terang di dark mode */
+}
+
+/* Saat tombol disembunyikan (kelas .hidden ditambahkan oleh JS) */
+.back-to-top-btn.hidden {
+  opacity: 0; /* Membuat tidak terlihat */
+  pointer-events: none; /* Menonaktifkan interaksi mouse */
+  transform: translateY(20px); /* Geser sedikit ke bawah saat tersembunyi */
+}
+
+/* Saat tombol dihover */
+.back-to-top-btn:hover {
+  transform: translateY(-5px); /* Sedikit naik saat dihover */
+}
